@@ -10,7 +10,22 @@ return (
         <div className="mensaje" ><h1>Lista de Productos</h1></div>
         <Link to="/Menu"><i class="fas fa-chevron-circle-left"></i></Link>
         <div/>
-        <Items/>
+        
+        {products.map((product)=>(
+        <Card 
+
+        key={product.id}
+        id={product.id}
+        name={product.name}
+        price={product.price}
+        descripcion={product.descripcion}
+        url={product.url}
+        counter={product.counter}
+
+        />
+        
+        ))}
+
     Carrito
     
     </div>

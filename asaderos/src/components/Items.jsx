@@ -20,16 +20,15 @@ return (
         
         
         {products.map((product)=>(
-        <Card 
-            key={product.id}
-            id={product.id}
-            name={product.name}
-            price={product.price}
-            descripcion={product.descripcion}
-            url={product.url}
-            counter={product.counter}
-        />
-        
+          <Card 
+              key={product.id}
+              id={product.id}
+              name={product.name}
+              price={product.price}
+              descripcion={product.descripcion}
+              url={product.url}
+              counter={product.counter}
+          />
         ))}
         
         

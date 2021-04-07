@@ -9,6 +9,7 @@ import products from "./components/products"
 
 function App() {
   const carrito = products;
+
   return (
     <Context.Provider value={carrito}>
       <BrowserRouter>

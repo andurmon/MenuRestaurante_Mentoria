@@ -1,7 +1,5 @@
 import React, { useState, useContext } from 'react';
 import Context from "../context/Context"
-import { Link } from "react-router-dom";
-import products from './products';
 
 /*
     [{   
@@ -14,20 +12,18 @@ import products from './products';
 const Card = (props) => {
     let carrito = useContext(Context);
     let pdtoContext;
-    carrito.forEach((pdto)=>{
-        if (pdto.name === props.name){
-            pdtoContext = pdto;
-        }
-    })
 
-    console.log(pdtoContext);
+    carrito.forEach((pdto, i)=>{
+        if (pdto.id === props.id){
+            pdtoContext = carrito[i];
+        }
+    });
 
     const [number_product, setNumber_product] = useState(pdtoContext.counter);
 
     function contadorAdd() {
         setNumber_product(number_product+1)
-        pdtoContext.counter = number_product+1;
-            
+        pdtoContext.counter = number_product+1;  
     };
 
     function contadorSub() {
